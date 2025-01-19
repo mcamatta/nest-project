@@ -105,26 +105,6 @@ Em caso de inconsistências ou solicitação do usuário, a transferência pode 
 - **Saldo insuficiente para devolução**: erro.
 - **Transação não encontrada**: erro.
 
-### 1.5 Consulta de saldo (Check Balance)
-
-**Descrição**
-O usuário logado consulta seu saldo atual.
-
-**Fluxo Principal**
-
-1. O usuário faz requisição para visualizar seu saldo.
-2. O sistema retorna o saldo ao usuário.
-
-### 1.6 Consulta de saldo (Check Balance)
-
-**Descrição**
-Permite que o usuário visualize o histórico das transações em que participou.
-
-**Fluxo Principal**
-
-1. O usuário faz requisição para visualizar suas transações.
-2. O sistema retorna a lista de transações (ou página paginada).
-
 ## 2 Modelo de dados
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1ef34182-ae4f-46f6-9663-013a1bb02409/f259899c-c44a-4d19-b119-968908c35c79/image.png)
