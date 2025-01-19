@@ -50,7 +50,21 @@ O usuário acessa o sistema informando as credenciais (email e senha), recebendo
 
 - **Credenciais inválidas**: o sistema retorna um erro de "usuário ou senha incorretos".
 
-### 1.3 Transferência de saldo (Transfer Funds)
+### 1.3 Depósito de saldo (Deposit Funds)
+
+**Descrição**
+Um usuário deseja depositar um valor em sua conta.
+
+**Pré-condições**
+
+- Usuário remetente está logado.
+
+**Fluxo Principal**
+
+1. O remetente informa o **valor** a ser depositado.
+4. O sistema retorna sucesso, com **detalhes da transação** (ID da transação, valor, etc.).
+
+### 1.4 Transferência de saldo (Transfer Funds)
 
 **Descrição**
 Um usuário deseja transferir parte ou todo o seu saldo para outro usuário.
@@ -79,7 +93,7 @@ Um usuário deseja transferir parte ou todo o seu saldo para outro usuário.
 - **Destinatário não encontrado**: o sistema retorna erro.
 - **Erro de banco ou de conexão**: operação não é finalizada (rollback).
 
-### 1.4 Reversão de transferência (Revert Transaction)
+### 1.5 Reversão de transferência (Revert Transaction)
 
 **Descrição**
 Em caso de inconsistências ou solicitação do usuário, a transferência pode ser revertida.
@@ -108,6 +122,62 @@ Em caso de inconsistências ou solicitação do usuário, a transferência pode 
 ## 2 Modelo de dados
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1ef34182-ae4f-46f6-9663-013a1bb02409/f259899c-c44a-4d19-b119-968908c35c79/image.png)
+
+## 3 Requisições
+
+**Register User**
+```bash
+curl -X POST \
+  http://localhost:3000/users/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Junior",
+    "username": "junior@gmail.com",
+    "password": "123123"
+  }'
+```
+
+**Login**
+```bash
+curl -X POST \
+  http://localhost:3000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "junior@gmail.com",
+    "password": "123123"
+  }'
+```
+
+**Deposit Funds**
+```bash
+curl -X POST \
+  http://localhost:3000/transactions/deposit \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 1000
+  }'
+```
+
+**Transfer Funds**
+```bash
+curl -X POST \
+  http://localhost:3000/transactions/transfer \
+  -H "Content-Type: application/json" \
+  -d '{
+    "recipientId": 2,
+    "amount": 200
+  }'
+```
+
+**Revert Transaction**
+```bash
+curl -X POST \
+  http://localhost:3000/transactions/transfer \
+  -H "Content-Type: application/json" \
+  -d '{
+    "transactionId": 2
+  }'
+```
 
 ## Project setup
 
