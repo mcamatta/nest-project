@@ -120,7 +120,19 @@ Em caso de inconsistências ou solicitação do usuário, a transferência pode 
 
 ## 2 Modelo de dados
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1ef34182-ae4f-46f6-9663-013a1bb02409/f259899c-c44a-4d19-b119-968908c35c79/image.png)
+```bash
+┌───────────────┐      ┌───────────────────┐
+│     USER      │      │   TRANSACTION     │
+├───────────────┤      ├───────────────────┤
+│ * id (PK)     │      │ * id (PK)         │
+│   name        │      │   senderId (FK)   │
+│   username    │ ───< │   receiverId (FK) │
+│   password    │      │   type            │
+│   balance     │      │   amount          │
+│               │      │   isReversed      │
+│               │      │   createdAt       │
+└───────────────┘      └───────────────────┘
+```
 
 ## 3 Requisições
 
