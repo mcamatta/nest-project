@@ -18,7 +18,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_ROOT_HOST: '%'
-      MYSQL_DATABASE: 'grupo_adriano_cobuccio'
+      MYSQL_DATABASE: 'database'
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - nest-mysql:/var/lib/mysql
