@@ -1,13 +1,12 @@
 ## 1. Caso de uso
 
-A aplicação terá quatro casos de uso principais:
+A aplicação terá 5 casos de uso principais:
 
 1. **Cadastro de usuário (Register User)**
 2. **Autenticação (Login)**
-3. **Transferência de saldo (Transfer Funds)**
-4. **Reversão de transferência (Revert Transaction)**
-5. **Consulta de saldo (Check Balance)**
-6. **Consulta de histórico de transações (List Transactions)**
+3. **Depósito de saldo (Deposit Funds)**
+4. **Transferência de saldo (Transfer Funds)**
+5. **Reversão de transferência (Revert Transaction)**
 
 ### 1.1 Cadastro de usuário (Register User)
 
